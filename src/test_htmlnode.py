@@ -1,6 +1,6 @@
 import unittest
-from htmlnode import LeafNode, ParentNode, HTMLNode, text_node_to_html_node
-from textnode import TextNode, TextType
+from htmlnode import LeafNode, ParentNode, HTMLNode
+from textnode import TextNode, TextType, text_node_to_html_node
 
 class TestHTMLNode(unittest.TestCase):
     def test_to_html_props(self):
