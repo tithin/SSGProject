@@ -6,8 +6,9 @@ from inlinemarkdown import (
     extract_markdown_links,
     extract_markdown_images,
     text_to_textnodes,
-    markdown_to_blocks
 )
+
+from markdown_blocks import markdown_to_blocks
 
 from textnode import TextNode, TextType
 
