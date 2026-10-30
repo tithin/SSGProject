@@ -1,6 +1,2 @@
 # SSGProject
-# SSGProject
-# SSGProject
-# SSGProject
-# SSGProject
-# SSGProject
+A half hearted attempt
