@@ -5,8 +5,7 @@ import os
 
 def main():
     copy_static_to_public("static", "public")
-    generate_page("content/index.md", "template.html", "public/index.html")
-
+    generate_pages_recursive("content", "template.html", "public")
 
 
 def copy_static_to_public(src, dst):
@@ -42,5 +41,15 @@ def generate_page(from_path, template_path, dest_path):
     with open(dest_path, "w", encoding="utf-8") as f:
         f.write(page)
 
+def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
+    for entry in os.listdir(dir_path_content):
+        from_path = os.path.join(dir_path_content, entry)
+        if os.path.isdir(from_path):
+            generate_pages_recursive(from_path, template_path, os.path.join(dest_dir_path, entry))
+        elif entry.endswith(".md"):
+            dest = os.path.join(dest_dir_path, entry.replace(".md", ".html"))
+            generate_page(from_path, template_path, dest)
+        else: 
+            continue
 
 main()
