@@ -4,9 +4,9 @@ import shutil
 import sys
 import os
 
-basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
-
 def main():
+
+    basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
     copy_static_to_docs("static", "docs")
     generate_pages_recursive("content", "template.html", "docs", basepath)
 
@@ -62,4 +62,5 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
         else: 
             continue
 
-main()
+if __name__ == "__main__":
+    main()
